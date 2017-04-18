@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>学IT - 后台管理系统</title>
+    <?php include('../common/style.html') ?>
+    <link rel="stylesheet" href="/lib/ueditor/design/css/trumbowyg.css">
+</head>
+<body>
+
+<!-- 侧边栏 -->
+<?php include('../common/aside.html') ?>
+<!-- 主体 -->
+<div class="main">
+    <div class="container-fluid">
+        <!-- 头部 -->
+        <?php include('../common/head.html') ?>
+        <!-- 客户列表 -->
+        <div class="body">
+            <!-- 面包屑 -->
+            <ol class="breadcrumb">
+                <li><a href="javascript:;">文章管理</a></li>
+                <li class="active">添加文章</li>
+            </ol>
+            <div class="panel panel-default user-list">
+
+                <!--富文本编辑区域-->
+                <div id="odiv" style="display:none;position:absolute;z-index:100;">
+                    <img src="/lib/ueditor/pic/sx.png" title="缩小" border="0" alt="缩小" onclick="sub(-1);"/>
+                    <img src="/lib/ueditor/pic/fd.png" title="放大" border="0" alt="放大" onclick="sub(1)"/>
+                    <img src="/lib/ueditor/pic/cz.png" title="重置" border="0" alt="重置" onclick="sub(0)"/>
+                    <img src="/lib/ueditor/pic/sc.png" title="删除" border="0" alt="删除" onclick="del();odiv.style.display='none';"/>
+                </div>
+                <div  onmousedown="show_element(event)" style="clear:both" id="customized-buttonpane" class="editor"></div>
+
+            </div>
+            <!-- 保存按钮 -->
+            <button type="button" class="btn btn-success save">保存</button>
+            <!-- 删除按钮 -->
+            <button type="button" class="btn btn-danger reset">重置</button>
+        </div>
+    </div>
+</div>
+
+<?php include('../common/script.html') ?>
+
+</body>
+</html>
