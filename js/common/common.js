@@ -25,12 +25,34 @@ define(['jquery','jqueryCookie','NProgress'],function ($,undefined,NProgress)
         "/html/course/add_step3.html":"/html/course/list.html",
         "/html/course/list.html":"/html/course/list.html",
         "/html/course/add.html":"/html/course/add.html",
-        "/html/teacher/list.html":"/html/teacher/list.html",
+        "/html/merchants/list.html":"/html/merchants/list.html",
+        "/html/merchants/add.html":"/html/merchants/list.html",
         "/index.html":"/index.html",
-        "/html/user/list.html":"/html/user/list.html",
+        "/":"/index.html",
+        "/html/owner/list.html":"/html/owner/list.html",
+        "/html/owner/add.html":"/html/owner/list.html",
         "/html/article/add_article.html":"/html/article/add_article.html",
         "/html/article/remove_article.html":"/html/article/remove_article.html",
         "/html/course/topic.html":"/html/course/topic.html",
+        "/html/master/list.html":"/html/master/list.html",
+        "/html/master/add.html":"/html/master/list.html",
+        "/html/master/commission_list.html":"/html/master/commission_list.html",
+        "/html/subject/gap_filling.html":"/html/subject/gap_filling.html",
+        "/html/subject/multiple_choice.html":"/html/subject/multiple_choice.html",
+        "/html/subject/single_choice.html":"/html/subject/single_choice.html",
+        "/html/subject/add.html/0":"/html/subject/single_choice.html",
+        "/html/subject/add.html/1":"/html/subject/multiple_choice.html",
+        "/html/subject/add.html/2":"/html/subject/gap_filling.html",
+        "/html/commission/add_rule.html":"/html/commission/add_rule.html",
+        "/html/commission/rule.html":"/html/commission/rule.html",
+        "/html/merchants/push_list.html":"/html/merchants/push_list.html",
+        "/html/accessorie/list.html":"/html/accessorie/list.html",
+        "/html/accessorie/add.html":"/html/accessorie/add.html",
+        "/html/owner/order_list.html":"/html/owner/order_list.html",
+        "/html/accessorie/stereo_list.html":"/html/accessorie/stereo_list.html",
+        "/html/accessorie/sound_list.html":"/html/accessorie/sound_list.html",
+        "/html/subject/single_choice_sound.html":"/html/subject/single_choice_sound.html",
+        "/html/subject/single_choice_stereo.html":"/html/subject/single_choice_stereo.html",
     }
 
     console.log(pathname);
@@ -39,19 +61,7 @@ define(['jquery','jqueryCookie','NProgress'],function ($,undefined,NProgress)
 
 
     $('#return').on('click',function () {
-        $.ajax({
-            url:'/v6/logout',
-            type:'post',
-            success:function (data) {
-                if(data.code==='200'){
-                    console.log('进来');
-                    location.href='/html/home/login.html';
-                }
-            },
-            error:function (data) {
-                //console.log(data);
-            }
-        })
+        location.href='/html/home/login.html';
         return false;
     });
     //{"tc_name":"123456","tc_avatar":""}
@@ -61,11 +71,12 @@ define(['jquery','jqueryCookie','NProgress'],function ($,undefined,NProgress)
     }catch(e){
         userInfo={};
     }
-    //var tc_name=userInfo.tc_name;
-    //var tc_avatar=userInfo.tc_avatar;
-    console.log(userInfo.tc_name+'----'+userInfo.tc_avatar);
-    $('.aside .profile h4').html(userInfo.tc_name?userInfo.tc_name:'小木瓜');
-    $('.aside .img-circle img').attr('src',userInfo.tc_avatar?userInfo.tc_avatar:'/img/default.jpg');
-
+    // var nickname=userInfo.nickname;
+    // var icon=userInfo.icon;
+    userInfo=JSON.parse(userInfo)[0];
+    // console.log(userInfo.nickname+'----'+userInfo.icon);
+    $('.aside .profile h4').html(userInfo.nickname?userInfo.nickname:'有马车装');
+    // $('.aside .img-circle img').attr('src',userInfo.icon?userInfo.icon:'/img/default.jpg');
+    $('.aside .img-circle img').attr('src','/img/default.jpg');
     NProgress.done();
 })

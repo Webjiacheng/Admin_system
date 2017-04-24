@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>有马管理系统-配件列表</title>
+    <?php include('../common/style.html') ?>
+</head>
+<body>
+
+<!-- 侧边栏 -->
+<?php include('../common/aside.html') ?>
+<!-- 主体 -->
+<div class="main">
+    <div class="container-fluid">
+        <!-- 头部 -->
+        <?php include('../common/head.html') ?>
+        <!-- 讲师列表 -->
+        <div class="body teacher-list">
+            <!-- 面包屑 -->
+            <ol class="breadcrumb">
+                <li><a href="javascript:;">配件管理</a></li>
+                <li class="active">配件列表</li>
+            </ol>
+            <!--添加师傅-->
+            <div class="page-title">
+                <a href="javascript:;" class="btn btn-info btn-sm pull-left yinx-btn" style='margin-right: 10px'>汽车音响</a>
+                <a href="javascript:;" class="btn btn-info btn-sm pull-left geyin-btn" style='margin-right: 10px'>汽车隔音</a>
+                <a href="./add.html" class="btn btn-success btn-sm pull-right" style='display: none'>添加师傅</a>
+            </div>
+            <div class="panel panel-default user-list">
+                <!--后期版本开放再打开注释：搜索功能  开始-->
+                <div class="panel-body"  style='display:none'>
+                    <form action="" class="form-inline">
+                        <select name="" class="form-control input-sm">
+                            <option value="">按年龄</option>
+                        </select>
+                        <select name="" class="form-control input-sm">
+                            <option value="">按性别</option>
+                        </select>
+                        <select name="" class="form-control input-sm">
+                            <option value="">按地区</option>
+                        </select>
+                        <select name="" class="form-control input-sm">
+                            <option value="">按日期</option>
+                        </select>
+                        <button class="btn btn-success btn-sm">筛选</button>
+                        <div class="input-group pull-right">
+                            <input type="text" class="form-control input-sm">
+                            <span class="input-group-btn">
+                                    <button class="btn btn-success btn-sm">搜索</button>
+                                </span>
+                        </div>
+                    </form>
+                </div>
+                <!--后期版本开放再打开注释：搜索功能  结束-->
+                <table class="table table-striped table-bordered table-hover">
+                    <thead>
+                    <tr>
+                        <th>编号</th>
+                        <th>名称</th>
+                        <th>二级分类名称</th>
+                        <th>上门报价</th>
+                        <th>到店报价</th>
+                        <th>配件状态</th>
+                        <th>发布时间</th>
+                        <th>安装时间</th>
+                        <th>地区</th>
+                        <th>地区类型</th>
+                        <th>一类分类名称</th>
+                        <th>调价起步</th>
+                        <th>调价上限</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody id='tbody'>
+
+                    </tbody>
+                </table>
+            </div>
+            <!-- 分页 -->
+            <ul class="pagination pull-right">
+                <li><a href="#">上一页</a></li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">下一页</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- 模态框 添加课程 -->
+<div class="modal fade" id="masterModal">
+    <div class="modal-dialog" style="width: 750px;">
+        <div class="panel panel-default" id='master-item-info'>
+                <div class="panel-heading">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="panel-title">配件信息</h4>
+                </div>
+                <div class="panel-body">
+                    <table class="table table-bordered table-condensed">
+                        <tbody id='peijian-motai'>
+
+                        </tbody>
+                    </table>
+                </div>
+        </div>
+    </div>
+</div>
+
+<?php include('../common/script.html') ?>
+<script type='text/tpl' id='accessorie-tpl'>
+    {{each list as value i}}
+        <tr>
+            <td>{{i+1}}</td>
+            <td>{{value.title}}</td>
+            <td>{{value.classify}}</td>
+            <td>{{value.price1}}</td>
+            <td>{{value.price2}}</td>
+            <td>{{value.state}}</td>
+            <td>{{value.datetime}}</td>
+            <td>{{value.completion}}</td>
+            <td>{{value.province}}-{{value.city}}-{{value.district}}</td>
+            <td>{{value.district_type}}</td>
+            <td>{{value.classify_id}}</td>
+            <td>{{value.from_interval}}</td>
+            <td>{{value.to_interval}}</td>
+            <td>
+                <a href="#masterModal" data-toggle="modal" class="btn btn-info btn-xs check" data-goods_id={{value.goods_id}}>修改</a>
+            </td>
+        </tr>
+    {{/each}}
+</script>
+<script type='text/html' id='peijian-tpl'>
+    <tr>
+        <th>配件名称:</th><td><input type="text" id='title' value='{{ list.title }}' style='border: none' /></td>
+        <th>配件二级分类名称:</th><td><input type="text" id='classify' value='{{ list.classify }}' style='border: none' /></td>
+    </tr>
+    <tr>
+        <th>上门报价:</th><td><input type="text" id='price1' value='{{ list.price1 }}' style='border: none' /></td>
+        <th>到店报价:</th><td><input type="text" id='price2' value='{{ list.price2 }}' style='border: none' /></td>
+    </tr>
+    <tr>
+        <th>配件图片地址:</th><td><input type="text" id='icon' value='{{ list.icon }}' style='border: none' /></td>
+        <th>配件施工时间:</th><td><input type="text" id='completion' value='{{ list.completion }}' style='border: none' /></td>
+    </tr>
+    <tr>
+        <th>省:</th><td><input type="text" id='province' value='{{ list.province }}' style='border: none' /></td>
+        <th>市:</th><td><input type="text" id='city' value='{{ list.city }}' style='border: none' /></td>
+    </tr>
+    <tr>
+        <th>区镇:</th><td><input type="text" id='district' value='{{ list.district }}' style='border: none' /></td>
+        <th>地区类型:</th><td><input type="text" id='district_type' value='{{ list.district_type }}' style='border: none' /></td>
+    </tr>
+    <tr>
+        <th>一类分类名称:</th><td><input type="text" id='classify_id' value='{{ list.classify_id }}' style='border: none' /></td>
+        <th>配件状态:</th><td><input type="text" id='state' value='{{ list.state }}' style='border: none' /></td>
+    </tr>
+    <tr>
+        <th>调价起步:</th><td><input type="text" id='from_interval' value='{{ list.from_interval }}' style='border: none' /></td>
+        <th>调价上限:</th><td><input type="text" id='to_interval' value='{{ list.to_interval }}' style='border: none' /></td>
+    </tr>
+    <tr>
+        <td colspan="4">
+            <button type="button" class="btn btn-sm btn-warning pull-left" data-dismiss="modal">返回</button>
+            <button type="button" class="btn btn-sm btn-success pull-right go-sub">确认修改</button>
+        </td>
+    </tr>
+</script>
+</body>
+</html>
+

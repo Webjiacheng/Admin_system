@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>学IT - 后台管理系统</title>
+    <title>有马管理系统-登录</title>
     <?php include('../common/style.html') ?>
 </head>
 <body>
@@ -17,13 +17,17 @@
                     <span class="input-group-addon">
                         <i class="fa fa-user"></i>
                     </span>
-                    <input type="text" id='username' name='tc_name' class="form-control" placeholder="用户名">
+                    <input type="text" id='phone' name='phone' class="form-control" placeholder="用户名">
                 </div>
                 <div class="input-group input-group-lg">
                     <span class="input-group-addon">
                         <i class="fa fa-key"></i>
                     </span>
-                    <input type="password" id='pwd' name='tc_pass' class="form-control" placeholder="密码">
+                    <input type="password" id='password' name='password' class="form-control" placeholder="密码">
+                </div>
+                <div class='forgot_password' style='display: none;'>
+                    <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span>
+                    <a href="javascript:;" data-toggle="modal" data-target="#myModal">忘记密码？</a>
                 </div>
                 <button type="submit" class="btn btn-lg btn-primary btn-block">登 录</button>
             </form>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>有马管理系统-车主列表</title>
+    <?php include('../common/style.html') ?>
+</head>
+<body>
+    
+    <!-- 侧边栏 -->
+    <?php include('../common/aside.html') ?>
+    <!-- 主体 -->
+    <div class="main">
+        <div class="container-fluid">
+            <!-- 头部 -->
+            <?php include('../common/head.html') ?>
+            <!-- 客户列表 -->
+            <div class="body">
+                <!-- 面包屑 -->
+                <ol class="breadcrumb">
+                    <li><a href="javascript:;">车主管理</a></li>
+                    <li class="active">车主列表</li>
+                </ol>
+                <!--添加师傅-->
+                <div class="page-title" style='display: none'>
+                    <a href="./add.html" class="btn btn-success btn-sm pull-right" style='display: none'>添加车主</a>
+                </div>
+                <div class="panel panel-default owner-list">
+                    <!--后期版本开放再打开注释：搜索功能  开始-->
+                    <div class="panel-body" style='display: none'>
+                        <form action="" class="form-inline">
+                            <select name="" class="form-control input-sm">
+                                <option value="">按年龄</option>
+                            </select>
+                            <select name="" class="form-control input-sm">
+                                <option value="">按性别</option>
+                            </select>
+                            <select name="" class="form-control input-sm">
+                                <option value="">按地区</option>
+                            </select>
+                            <select name="" class="form-control input-sm">
+                                <option value="">按日期</option>
+                            </select>
+                            <button class="btn btn-success btn-sm">筛选</button>
+                            <div class="input-group pull-right">
+                                <input type="text" class="form-control input-sm">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-success btn-sm">搜索</button>
+                                </span>
+                            </div>
+                        </form>
+                    </div>
+                    <!--后期版本开放再打开注释：搜索功能  结束-->
+                    <table class="table table-striped table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>编号</th>
+                                <th>车主昵称</th>
+                                <th>车主地址</th>
+                                <th>车主性别</th>
+                                <th>车主电话</th>
+                                <th>车主状态</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody id='tbody'>
+
+                        </tbody>
+                    </table>
+                </div>
+                <!-- 分页 -->
+                <ul class="pagination pull-right" id='totalPage'>
+                    <li><a href="#" id='prev'>上一页</a></li>
+                    <!--<li class='active'><a href="#">1</a></li>-->
+                    <!--<li><a href="#">2</a></li>-->
+                    <!--<li><a href="#">3</a></li>-->
+                    <!--<li><a href="#">4</a></li>-->
+                    <!--<li><a href="#">5</a></li>-->
+                    <!--<li><a href="#" id='next'>下一页</a></li>-->
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- 模态框 添加车主 -->
+    <div class="modal fade" id="teacherModal">
+        <div class="modal-dialog" style="width: 750px;">
+            <div class="panel panel-default" id='owner-item-info'>
+
+            </div>
+        </div>
+    </div>
+    <?php include('../common/script.html') ?>
+    <script type='text/tpl' id='owner-list'>
+        {{each list as value i}}
+            <tr>
+                <td>{{i+1}}</td>
+                <td>{{value.nickname}}</td>
+                <td>{{value.address}}</td>
+                <td>{{value.gender}}</td>
+                <td>{{value.phone}}</td>
+                <td>{{value.state}}</td>
+                <td>
+                    <a href="#teacherModal" data-toggle="modal" class="btn btn-info btn-xs check" data-user_id={{value.user_id}}>查 看</a>
+                    <a href="javascript:;" class="btn btn-warning btn-xs" style='display:none'>注 销</a>
+                </td>
+            </tr>
+        {{/each}}
+    </script>
+    <script type='text/html' id='owner-motai'>
+        <div class="panel-heading">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="panel-title">车主信息</h4>
+        </div>
+        <div class="panel-body">
+            <table class="table table-bordered table-condensed">
+                <tbody>
+                <tr>
+                    <th>车主昵称:</th><td>{{ list.nickname }}</td>
+                    <th>车主地址:</th><td colspan="3">{{ list.address }}</td>
+                </tr>
+                <tr>
+                    <th>手机号码:</th><td>{{ list.phone }}</td>
+                    <th>车主性别:</th><td colspan="3">{{ list.gender }}</td>
+                </tr>
+                <tr>
+                    <th>车主状态:</th><td>{{ list.state }}</td>
+                    <th>车主ID:</th><td>{{ list.user_id }}</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </script>
+</body>
+</html>

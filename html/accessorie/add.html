@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>有马管理系统-配件添加</title>
+    <?php include('../common/style.html') ?>
+</head>
+<body>
+
+<!-- 侧边栏 -->
+<?php include('../common/aside.html') ?>
+<!-- 主体 -->
+<div class="main">
+    <div class="container-fluid">
+        <!-- 头部 -->
+        <?php include('../common/head.html') ?>
+        <div class="body teacher">
+            <!-- 面包屑 -->
+            <ol class="breadcrumb">
+                <li><a href="javascript:;">配件管理</a></li>
+                <li class="active">配件添加</li>
+            </ol>
+            <div class="teacher-add">
+                <form action="" id='accessorie-add-form' class="form-horizontal col-xs-offset-2">
+                    <div class="form-group">
+                        <label for="" class="col-xs-3 control-label">配件ID</label>
+                        <div class="col-xs-4">
+                            <input type="text" name='goods_id' class="form-control input-sm">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="" class="col-xs-3 control-label">配件名称</label>
+                        <div class="col-xs-4">
+                            <input type="text" name='title' class="form-control input-sm">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for=""  class="col-xs-3 control-label">配件二级分类名称</label>
+                        <div class="col-xs-4">
+                            <input type="text" name='classify' class="form-control input-sm">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for=""  class="col-xs-3 control-label">上门报价</label>
+                        <div class="col-xs-4">
+                            <input type="text" name='price1' class="form-control input-sm">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for=""  class="col-xs-3 control-label">到店报价</label>
+                        <div class="col-xs-4">
+                            <input type="text" name='price2' class="form-control input-sm">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for=""  class="col-xs-3 control-label">配件图片地址</label>
+                        <div class="col-xs-4">
+                            <input type="text" name='icon' class="form-control input-sm">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for=""  class="col-xs-3 control-label">配件施工时间</label>
+                        <div class="col-xs-4">
+                            <input type="text" name='completion' class="form-control input-sm">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for=""  class="col-xs-3 control-label">省</label>
+                        <div class="col-xs-4">
+                            <input type="text" name='province' class="form-control input-sm">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for=""  class="col-xs-3 control-label">市</label>
+                        <div class="col-xs-4">
+                            <input type="text" name='city' class="form-control input-sm">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for=""  class="col-xs-3 control-label">区县</label>
+                        <div class="col-xs-4">
+                            <input type="text" name='district' class="form-control input-sm">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for=""  class="col-xs-3 control-label">地区类型</label>
+                        <div class="col-xs-4">
+                            <input type="text" name='district_type' class="form-control input-sm">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for=""  class="col-xs-3 control-label">一类分类名称</label>
+                        <div class="col-xs-4">
+                            <input type="text" name='classify_id' class="form-control input-sm">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for=""  class="col-xs-3 control-label">调价起步</label>
+                        <div class="col-xs-4">
+                            <input type="text" name='from_interval' class="form-control input-sm">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for=""  class="col-xs-3 control-label">调价上限</label>
+                        <div class="col-xs-4">
+                            <input type="text" name='to_interval' class="form-control input-sm">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-7">
+                            <button type='button' id='accessorie_add' class="btn btn-success btn-sm pull-right"> 添 加 </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<?php include('../common/script.html') ?>
+</body>
+</html>

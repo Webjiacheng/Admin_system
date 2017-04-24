@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>有马管理系统-题目添加</title>
+    <?php include('../common/style.html') ?>
+</head>
+<body>
+
+<!-- 侧边栏 -->
+<?php include('../common/aside.html') ?>
+<!-- 主体 -->
+<div class="main">
+    <div class="container-fluid">
+        <!-- 头部 -->
+        <?php include('../common/head.html') ?>
+        <div class="body teacher">
+            <!-- 面包屑 -->
+            <ol class="breadcrumb">
+                <li><a href="javascript:;">题库管理</a></li>
+                <li class="active">题目添加</li>
+            </ol>
+            <div class="teacher-add">
+                <form action="" id='timu-add-form' class="form-horizontal col-xs-offset-2">
+                    <div class="form-group">
+                        <label for="" class="col-xs-3 control-label">题目</label>
+                        <div class="col-xs-6">
+                            <input type="text" name='ask' class="form-control input-sm" placeholder="请输入题目标题">
+                        </div>
+                    </div>
+                    <div class='content-box'>
+                        <div class="form-group">
+                            <label for="" class="col-xs-3 control-label">A:</label>
+                            <div class="col-xs-6">
+                                <input type="text" name='a' class="form-control input-sm" placeholder="请输入A选项">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="" class="col-xs-3 control-label">B:</label>
+                            <div class="col-xs-6">
+                                <input type="text" name='b' class="form-control input-sm" placeholder="请输入B选项">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="" class="col-xs-3 control-label">C:</label>
+                            <div class="col-xs-6">
+                                <input type="text" name='c' class="form-control input-sm" placeholder="请输入C选项">
+                            </div>
+                        </div>
+                        <div class="form-group" style='display: none' id='item-D'>
+                            <label for="" class="col-xs-3 control-label">D:</label>
+                            <div class="col-xs-6">
+                                <input type="text" name='d' class="form-control input-sm" placeholder="请输入D选项">
+                            </div>
+                        </div>
+                        <div class="form-group" style='display: none' id='item-E'>
+                            <label for="" class="col-xs-3 control-label">E:</label>
+                            <div class="col-xs-6">
+                                <input type="text" name='e' class="form-control input-sm" placeholder="请输入E选项">
+                            </div>
+                        </div>
+                    </div>
+                    <!--添加选项按钮-->
+                    <div class="form-group add_item_btn">
+                        <div class="col-xs-7">
+                            <button type='button' id='add_items' class="btn btn-info btn-sm pull-right">添加选项</button>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="" class="col-xs-3 control-label">答案</label>
+                        <div class="col-xs-3">
+                            <input type="text" name='answer' class="form-control input-sm" placeholder="值为小写字母">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="" class="col-xs-3 control-label">类型</label>
+                        <div class="col-xs-3">
+                            <select name="classify" class="form-control input-sm">
+                                <option value="汽车音响">汽车音响</option>
+                                <option value="汽车隔音">汽车隔音</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-5">
+                            <button type='button' id='tc_re' class="btn btn-warning btn-ls pull-right">放弃操作</button>
+                        </div>
+                        <div class="col-xs-3">
+                            <input type="button" id='tm_add' class="btn btn-success btn-ls pull-right" value='保存题目'>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<?php include('../common/script.html') ?>
+</body>
+</html>

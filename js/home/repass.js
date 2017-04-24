@@ -8,7 +8,7 @@ define(['jquery'],function ($) {
         var tc_pass=parseInt($('#original_password').val());
         var tc_new_pass=parseInt($('#new_password').val());
         if($('#new_password').val()==$('#confirm_password').val()){
-            $.post('/v6/teacher/repass',{
+            $.post('/v6/merchants/repass',{
                 tc_pass:tc_pass,
                 tc_new_pass:tc_new_pass
             },function (data) {

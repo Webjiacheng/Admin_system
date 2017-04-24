@@ -316,7 +316,7 @@ a:focus {
   color: #15c288;
 }
 .main .teacher .teacher-add {
-  padding: 40px 0 20px;
+  padding: 40px 0 1px;
   background-color: #FFF;
 }
 .main .teacher-profile .settings {
@@ -703,6 +703,9 @@ a:focus {
 .login .login-wrap .input-group {
   margin: 20px 0;
 }
+.forgot_password{
+  text-align: right;
+}
 .login .login-wrap .fa {
   width: 18px;
   font-size: 20px;
@@ -740,7 +743,11 @@ a:focus {
 #teacherModal th {
   color: #666;
 }
+#teacherModal.single th {
+  width: 100px;
+  text-align: center;
+}
 #teacherModal .introduce {
-  min-height: 240px;
+  /*min-height: 240px;*/
   padding: 15px 10px;
 }

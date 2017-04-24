@@ -7,7 +7,7 @@ define(['jquery','ArtTemplate','Uploadify','ckeditor','region','jqueryCookie'],f
     var ck1=null;
     console.log($.cookie('userInfo'));
     console.log('tc_avatar:'+$.cookie('tc_avatar'));
-    $.get('/v6/teacher/profile',function (data) {
+    $.get('/v6/merchants/profile',function (data) {
         console.log(data.result);
         var html=ArtTemplate('userInfo',data.result);
         tc_id=data.result.tc_id;
@@ -38,7 +38,7 @@ define(['jquery','ArtTemplate','Uploadify','ckeditor','region','jqueryCookie'],f
         });
 
     });
-    $(document).on('click','.user-btn-save',function () {
+    $(document).on('click','.owner-btn-save',function () {
         var hometown=$('#hometown select').map(function () {
             return $(this).find('option:selected').text();
         }).toArray().join('|');
@@ -46,7 +46,7 @@ define(['jquery','ArtTemplate','Uploadify','ckeditor','region','jqueryCookie'],f
         //设置富文本
         ck1.updateElement();
 
-        $.post('/v6/teacher/modify',$('#userInfoUpdata_form').serialize()+'&tc_id='+tc_id+'&tc_hometown='+hometown,function (data) {
+        $.post('/v6/merchants/modify',$('#userInfoUpdata_form').serialize()+'&tc_id='+tc_id+'&tc_hometown='+hometown,function (data) {
         })
     });
 

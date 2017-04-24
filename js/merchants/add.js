@@ -14,14 +14,14 @@ define(['jquery','bootstrap','Datepicker','DatepickerLanguage'],function ($,boot
     day=day>9?day:'0'+day;
     $('#tc_join_date').val(date.getFullYear()+'-'+month+'-'+day);
     console.log('添加讲师');
-    $('#teacher-add-form').on('submit',function () {
+    $('#merchants-add-form').on('submit',function () {
         $.ajax({
-            url:'/v6/teacher/add',
+            url:'/v6/merchants/add',
             type:'post',
-            data:$('#teacher-add-form').serialize(),
+            data:$('#merchants-add-form').serialize(),
             success:function (data) {
                 console.log(data);
-                location.href='/html/teacher/list.html';
+                location.href='/html/merchants/list.html';
             }
         })
         return false;

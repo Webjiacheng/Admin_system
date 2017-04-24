@@ -3,28 +3,180 @@
     <div class="profile">
         <!-- 头像 -->
         <div class="avatar img-circle">
-            <img src="">
+            <img src="" id='icon'>
         </div>
-        <h4>布头儿</h4>
+        <h4>有马车装</h4>
     </div>
     <!-- 导航菜单 -->
     <div class="navs">
         <ul class="list-unstyled">
+            <!--首页-->
             <li>
                 <a href="/index.html">
                     <i class="fa fa-home"></i>
-                    仪表盘
+                    首页
                     <span class='glyphicon glyphicon-triangle-left'></span>
                 </a>
             </li>
+            <!--师傅管理-->
             <li>
-                <a href="/html/user/list.html">
-                    <i class="fa fa-bell"></i>
-                    用户管理
-                    <span class='glyphicon glyphicon-triangle-left'></span>
+                <a href="javascript:;">
+                    <i class="fa fa-cog"></i>
+                    师傅管理
+                    <i class="arrow fa fa-angle-right"></i>
                 </a>
+                <ul class="list-unstyled">
+                    <li>
+                        <a href="/html/master/list.html">
+                            <i class="fa fa-bell"></i>
+                            师傅列表
+                            <span class='glyphicon glyphicon-triangle-left'></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/html/master/commission_list.html">
+                            <i class="fa fa-bell"></i>
+                            师傅抽佣列表
+                            <span class='glyphicon glyphicon-triangle-left'></span>
+                        </a>
+                    </li>
+                </ul>
             </li>
+            <!--车主管理-->
             <li>
+                <a href="javascript:;">
+                    <i class="fa fa-cog"></i>
+                    车主管理
+                    <i class="arrow fa fa-angle-right"></i>
+                </a>
+                <ul class="list-unstyled">
+                    <li>
+                        <a href="/html/owner/list.html">
+                            <i class="fa fa-bell"></i>
+                            车主列表
+                            <span class='glyphicon glyphicon-triangle-left'></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/html/owner/order_list.html">
+                            <i class="fa fa-bell"></i>
+                            车主订单列表
+                            <span class='glyphicon glyphicon-triangle-left'></span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <!--商家管理-->
+            <li>
+                <a href="javascript:;">
+                    <i class="fa fa-cog"></i>
+                    商家管理
+                    <i class="arrow fa fa-angle-right"></i>
+                </a>
+                <ul class="list-unstyled">
+                    <li>
+                        <a href="/html/merchants/list.html">
+                            <i class="fa fa-bell"></i>
+                            商家列表
+                            <span class='glyphicon glyphicon-triangle-left'></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/html/merchants/push_list.html">
+                            <i class="fa fa-bell"></i>
+                            推送订单列表
+                            <span class='glyphicon glyphicon-triangle-left'></span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <!--抽佣管理-->
+            <li>
+                <a href="javascript:;">
+                    <i class="fa fa-cog"></i>
+                    抽佣管理
+                    <i class="arrow fa fa-angle-right"></i>
+                </a>
+                <ul class="list-unstyled">
+                    <li style='display: none'>
+                        <a href="/html/commission/rule.html">
+                            <i class="fa fa-bell"></i>
+                            抽佣规则
+                            <span class='glyphicon glyphicon-triangle-left'></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/html/commission/add_rule.html">
+                            <i class="fa fa-bell"></i>
+                            添加抽佣规则
+                            <span class='glyphicon glyphicon-triangle-left'></span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <!--配件管理-->
+            <li>
+                <a href="javascript:;">
+                    <i class="fa fa-cog"></i>
+                    配件管理
+                    <i class="arrow fa fa-angle-right"></i>
+                </a>
+                <ul class="list-unstyled">
+                    <li>
+                        <a href="/html/accessorie/stereo_list.html">
+                            汽车音响列表
+                            <span class='glyphicon glyphicon-triangle-left'></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/html/accessorie/sound_list.html">
+                            汽车隔音列表
+                            <span class='glyphicon glyphicon-triangle-left'></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/html/accessorie/add.html">
+                            新增配件
+                            <span class='glyphicon glyphicon-triangle-left'></span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <!--题库管理-->
+            <li>
+                <a href="javascript:;">
+                    <i class="fa fa-cog"></i>
+                    题库管理
+                    <i class="arrow fa fa-angle-right"></i>
+                </a>
+                <ul class="list-unstyled">
+                    <li>
+                        <a href="/html/subject/single_choice_sound.html">
+                            单选题(汽车隔音)
+                            <span class='glyphicon glyphicon-triangle-left'></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/html/subject/single_choice_stereo.html">
+                            单选题(汽车音响)
+                            <span class='glyphicon glyphicon-triangle-left'></span>
+                        </a>
+                    </li>
+                    <li style='display: none'>
+                        <a href="/html/subject/multiple_choice.html">
+                            多选题
+                            <span class='glyphicon glyphicon-triangle-left'></span>
+                        </a>
+                    </li>
+                    <li style='display: none'>
+                        <a href="/html/subject/gap_filling.html">
+                            填空题
+                            <span class='glyphicon glyphicon-triangle-left'></span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li style='display: none'>
                 <a href="javascript:;">
                     <i class="fa fa-cog"></i>
                     文章设置
@@ -45,14 +197,7 @@
                     </li>
                 </ul>
             </li>
-            <li>
-                <a href="/html/teacher/list.html">
-                    <i class="fa fa-bell"></i>
-                    讲师管理
-                    <span class='glyphicon glyphicon-triangle-left'></span>
-                </a>
-            </li>
-            <li>
+            <li style='display: none'>
                 <a href="javascript:;" id='class'>
                     <i class="fa fa-cog"></i>
                     课程管理
@@ -80,27 +225,6 @@
                     <li>
                         <a href="/html/course/topic.html">
                             课程专题
-                            <span class='glyphicon glyphicon-triangle-left'></span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a href="javascript:;">
-                    <i class="fa fa-cog"></i>
-                    系统设置
-                    <i class="arrow fa fa-angle-right"></i>
-                </a>
-                <ul class="list-unstyled">
-                    <li>
-                        <a href="javascript:;">
-                            网站设置
-                            <span class='glyphicon glyphicon-triangle-left'></span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="javascript:;">
-                            权限管理
                             <span class='glyphicon glyphicon-triangle-left'></span>
                         </a>
                     </li>

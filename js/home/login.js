@@ -1,7 +1,7 @@
 /**
  * Created by hujiacheng on 2017/2/26.
  */
-define(['jquery','jqueryCookie'],function ($,undefined) {
+define(['jquery','jqueryCookie','MD5'],function ($,undefined,MD5) {
     var userInfo=null;
     try{
         userInfo=JSON.parse($.cookie('userInfo'));
@@ -9,26 +9,23 @@ define(['jquery','jqueryCookie'],function ($,undefined) {
         userInfo={};
     }
 
-    $('.login .avatar img').attr('src',userInfo.tc_avatar?userInfo.tc_avatar:'/img/default.jpg');
-
+    $('.login .avatar img').attr('src',userInfo.icon?userInfo.icon:'/img/default.jpg');
+    // console.log(userInfo.icon);
     $('#formData').on('submit',function () {
         $.ajax({
-            url:'/v6/login',
+            url:'http://app.youmasc.com/youma/login.php',
             type:'post',
-            // data:{
-            //     tc_name:$('#username').val(),
-            //     tc_pass:$('#pwd').val()
-            // },
-            data:$(this).serialize(),
+            data:{
+                phone:$('#phone').val(),
+                password:$.md5($("#password").val())
+            },
             success:function (data) {
-                if(data.code===200){
-                    // console.log(data);
-                    $.cookie('userInfo',JSON.stringify(data.result),{path:'/'});
-                    location.href='/index.html';
-                }
+                console.log('成功'+data);
+                $.cookie('userInfo',JSON.stringify(data),{path:'/'});
+                location.href='/index.html';
             },
             error:function (data){
-                console.log(data);
+                console.log('登录失败');
             }
         })
         return false;

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>有马管理系统-师傅添加</title>
+    <?php include('../common/style.html') ?>
+</head>
+<body>
+    
+    <!-- 侧边栏 -->
+    <?php include('../common/aside.html') ?>
+    <!-- 主体 -->
+    <div class="main">
+        <div class="container-fluid">
+            <!-- 头部 -->
+            <?php include('../common/head.html') ?>
+            <div class="body teacher">
+                <!-- 面包屑 -->
+                <ol class="breadcrumb">
+                    <li><a href="javascript:;">师傅管理</a></li>
+                    <li class="active">师傅添加</li>
+                </ol>
+                <div class="teacher-add">
+                    <form action="" id='teacher-add-form' class="form-horizontal col-xs-offset-2">
+                        <div class="form-group" style='display: none'>
+                            <label for="" class="col-xs-3 control-label">师傅头像</label>
+                            <div class="col-xs-4">
+                                <input type="text" id='icon' name='icon' class="form-control input-sm" placeholder="师傅头像" value="http://www.qqpk.cn/Article/UploadFiles/201201/20120125215817482.jpg">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="" class="col-xs-3 control-label">师傅昵称</label>
+                            <div class="col-xs-4">
+                                <input type="text" id='nickname' name='nickname' class="form-control input-sm" placeholder="师傅名称">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="" class="col-xs-3 control-label">师傅公司</label>
+                            <div class="col-xs-4">
+                                <input type="text" id='company' name='company' class="form-control input-sm">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for=""  class="col-xs-3 control-label">师傅职位</label>
+                            <div class="col-xs-4">
+                                <input type="text" value='' id='job' name='job' class="form-control input-sm">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for=""  class="col-xs-3 control-label">师傅电话</label>
+                            <div class="col-xs-4">
+                                <input type="text" value='' id='phone' name='phone' class="form-control input-sm">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for=""  class="col-xs-3 control-label">师傅地址</label>
+                            <div class="col-xs-8">
+                                <input type="text" value='' id='address' name='address' class="form-control input-sm">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="" class="col-xs-3 control-label">性别</label>
+                            <div class="col-xs-4">
+                                <label class="radio-inline">
+                                    <input type="radio" value="男" checked='checked' name="gender">男
+                                </label>
+                                <label class="radio-inline">
+                                    <input type="radio" value="女" name="gender">女
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-xs-7">
+                                <!--<button type='on_submit' id='add' class="btn btn-success btn-sm pull-right"> 添 加 </button>-->
+                                <input type="button" id='add' class="btn btn-success btn-sm pull-right" value='添加'/>
+                            </div>                          
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <?php include('../common/script.html') ?>
+</body>
+</html>

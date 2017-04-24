@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>有马管理系统-多选题</title>
+    <?php include('../common/style.html') ?>
+</head>
+<body>
+
+<!-- 侧边栏 -->
+<?php include('../common/aside.html') ?>
+<!-- 主体 -->
+<div class="main">
+    <div class="container-fluid">
+        <!-- 头部 -->
+        <?php include('../common/head.html') ?>
+        <div class="body course-topic">
+            <!-- 面包屑 -->
+            <ol class="breadcrumb">
+                <li><a href="javascript:;">题库管理</a></li>
+                <li class="active">多选题</li>
+            </ol>
+            <!--添加多选题-->
+            <div class="page-title">
+                <a href="javascript:;" class="btn btn-info btn-sm pull-left" style='margin-right: 10px'>音响设备类型</a>
+                <a href="javascript:;" class="btn btn-info btn-sm pull-left" style='margin-right: 10px'>汽车隔音类型</a>
+                <a href="javascript:;" class="btn btn-info btn-sm pull-left" style='margin-right: 10px'>其他类型</a>
+                <a href="./add.html/1" class="btn btn-success btn-sm pull-right">添加多选题</a>
+            </div>
+            <div class="panel panel-default user-list">
+                <!--后期版本开放再打开注释：搜索功能  开始-->
+                <div class="panel-body"  style='display:none'>
+                    <form action="" class="form-inline">
+                        <select name="" class="form-control input-sm">
+                            <option value="">按年龄</option>
+                        </select>
+                        <select name="" class="form-control input-sm">
+                            <option value="">按性别</option>
+                        </select>
+                        <select name="" class="form-control input-sm">
+                            <option value="">按地区</option>
+                        </select>
+                        <select name="" class="form-control input-sm">
+                            <option value="">按日期</option>
+                        </select>
+                        <button class="btn btn-success btn-sm">筛选</button>
+                        <div class="input-group pull-right">
+                            <input type="text" class="form-control input-sm">
+                            <span class="input-group-btn">
+                                    <button class="btn btn-success btn-sm">搜索</button>
+                                </span>
+                        </div>
+                    </form>
+                </div>
+                <!--后期版本开放再打开注释：搜索功能  结束-->
+                <table class="table table-striped table-bordered table-hover">
+                    <thead>
+                    <tr>
+                        <th>编号</th>
+                        <th>题目</th>
+                        <th>答案</th>
+                        <th>类型</th>
+                        <th>正确率/%</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>汽车设备考试题目</td>
+                        <td>A、C</td>
+                        <td>多选题</td>
+                        <td>70</td>
+                        <td>
+                            <a href="#teacherModal" data-toggle="modal" class="btn btn-info btn-xs">查 看</a>
+                            <a href="javascript:;" class="btn btn-warning btn-xs">注 销</a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- 分页 -->
+            <ul class="pagination pull-right">
+                <li><a href="#">上一页</a></li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#">下一页</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- 模态框 添加课程 -->
+<div class="modal fade single" id="teacherModal">
+    <div class="modal-dialog" style="width: 750px;">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="panel-title">题目信息</h4>
+            </div>
+            <div class="panel-body">
+                <table class="table table-bordered table-condensed">
+                    <tbody>
+                    <tr>
+                        <th>考试题目:</th><td colspan="4">音响设备考试题目</td>
+                    </tr>
+                    <tr>
+                        <th>答案:</th><td colspan="4">A、C</td>
+                    </tr>
+                    <tr>
+                        <th>题目类型:</th><td colspan="4">多选题|音响设备</td>
+                    </tr>
+                    <tr>
+                        <td colspan="7">
+                            <div class="introduce">
+                                <p>A:题目A选项的标题</p>
+                                <p>B:题目B选项的标题</p>
+                                <p>C:题目C选项的标题</p>
+                                <p>D:题目D选项的标题</p>
+                                <p>E:题目E选项的标题</p>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<?php include('../common/script.html') ?>
+</body>
+</html>

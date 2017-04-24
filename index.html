@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>学IT - 后台管理系统</title>
+    <title>有马管理系统-首页</title>
     <?php include('./html/common/style.html') ?>
 </head>
 <body>
@@ -21,29 +21,29 @@
                         <div class="col-xs-3">
                             <div class="cell money">
                                 <i class="fa fa-money"></i>
-                                <span>我的收入</span>
-                                <h5>￥11.11</h5>
+                                <span>推送订单</span>
+                                <h5 id='push_order'></h5>
                             </div>
                         </div>
                         <div class="col-xs-3">
                             <div class="cell th">
                                 <i class="fa fa-th"></i>
-                                <span>课程数量</span>
-                                <h5>12</h5>
+                                <span>师傅数量</span>
+                                <h5 id='master'></h5>
                             </div>
                         </div>
                         <div class="col-xs-3">
                             <div class="cell user">
                                 <i class="fa fa-user"></i>
-                                <span>用户数量</span>
-                                <h5>236</h5>
+                                <span>车主数量</span>
+                                <h5 id='owner'></h5>
                             </div>
                         </div>
                         <div class="col-xs-3">
                             <div class="cell eye">
                                 <i class="fa fa-eye"></i>
-                                <span>浏览量</span>
-                                <h5>22435</h5>
+                                <span>商家数量</span>
+                                <h5 id='merchant'></h5>
                             </div>
                         </div>
                     </div>
@@ -55,6 +55,17 @@
         </div>
     </div>
     <?php include('./html/common/script.html') ?>
-
+    <script type='text/html' id='push_order_tpl'>
+        {{data}}
+    </script>
+    <script type='text/html' id='master_tpl'>
+        {{data}}
+    </script>
+    <script type='text/html' id='owner_tpl'>
+        {{data}}
+    </script>
+    <script type='text/html' id='merchant_tpl'>
+        {{data}}
+    </script>
 </body>
 </html>
